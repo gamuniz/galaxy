@@ -1,9 +1,9 @@
 ---
  - hosts: all
-   collections:
-     - marmorag.ansodium
+   gather_facts: false
    tasks:
      - debug:
          msg: "Hi I am in Playbook"
-   roles:
-     - test-galaxy-role
+     - name: include role
+       include_role:
+         name: test-galaxy-role
